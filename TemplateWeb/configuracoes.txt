@@ -1,0 +1,6 @@
+## startar via MAVEN o banco de dados HSQLDB
+mvn exec:java -Dexec.mainClass="org.hsqldb.Server" -Dexec.args="-database.0 file:/Desenvolvimento/ferramentas/base-dados/hsqldb/data/tutorial"
+
+## iniciando o gerenciador de banco HSQLDB
+java -cp ./lib/hsqldb-2.0.0.jar org.hsqldb.util.DatabaseManager -driver org.hsqldb.jdbcDriver -url jdbc:hsqldb:file:testdb -user sa
+mvn exec:java -Dexec.mainClass="org.hsqldb.util.DatabaseManager" -Dexec.args="-driver org.hsqldb.jdbcDriver -url jdbc:hsqldb:file:/Desenvolvimento/ferramentas/base-dados/hsqldb/data/tutorial -user sa"
