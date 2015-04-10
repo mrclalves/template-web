@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+  <h:head>
+    <title>Exemplo simples de aplicação JSF 2.0</title>
+  </h:head>
+  <h:body>
+    <h:form id="form1">
+      <h3>Cadastro de cliente</h3>
+      <table>
+        <tr>
+          <td>Nome:</td>
+          <td>
+            <h:inputText id="nome"
+                value="#{clienteBean.cliente.nome}" required="true" />
+            <h:message for="nome" />
+          </td>
+        </tr>
+        <tr>
+          <td>Data de Nascimento:</td>
+          <td>
+            <h:inputText id="dataNasc"
+                value="#{clienteBean.cliente.dataNascimento}" required="true">
+              <f:convertDateTime pattern="dd/MM/yyyy" />
+            </h:inputText> (dd/mm/yyyy)
+            <h:message for="dataNasc" />
+          </td>
+        </tr>
+        <tr>
+          <td>Sexo:</td>
+          <td>
+            <h:selectOneMenu value="#{clienteBean.cliente.sexo}">
+              <f:selectItems value="#{clienteBean.listaSexo}" var="sexo"
+                  itemLabel="#{sexo}" itemValue="#{sexo}"/>
+            </h:selectOneMenu>
+          </td>
+        </tr>
+        <tr>
+          <td>Cidade:</td>
+          <td>
+            <h:inputText id="cidade"
+                value="#{clienteBean.cliente.localidadeCliente.cidade}"
+                required="true" />
+            <h:message for="cidade" />
+          </td>
+        </tr>
+        <tr>
+          <td>Estado:</td>
+          <td>
+            <h:inputText id="estado"
+                value="#{clienteBean.cliente.localidadeCliente.estado}"
+                required="true" />
+            <h:message for="estado" />
+          </td>
+        </tr>
+      </table>
+      <h:messages />
+      <br/>
+      <h:commandButton value="Criar" action="#{clienteBean.confirmacao}" />
+      <h:commandButton value="Cancelar" immediate="true"
+          action="#{clienteBean.cancelar}" />
+    </h:form>
+  </h:body>
+</html>
