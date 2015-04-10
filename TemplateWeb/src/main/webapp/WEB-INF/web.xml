@@ -24,6 +24,17 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
     
+    <!-- upload -->
+    <filter>
+         <filter-name>PrimeFaces FileUpload Filter</filter-name>
+         <filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+    </filter>
+    <filter-mapping>
+         <filter-name>PrimeFaces FileUpload Filter</filter-name>
+         <servlet-name>Faces Servlet</servlet-name>
+    </filter-mapping>
+
+    
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:META-INF/applicationContext.xml</param-value>
