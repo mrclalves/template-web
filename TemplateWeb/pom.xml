@@ -5,14 +5,13 @@
     <artifactId>TemplateWeb</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    
     <properties>
         <jsf.sun.version>2.1.7</jsf.sun.version>
         <primefaces-version>4.0</primefaces-version>
         <org.springframework-version>3.2.6.RELEASE</org.springframework-version>
         <hibernate-version>4.1.0.Final</hibernate-version>
+        
     </properties>
-    
     <dependencies>
         <!-- junit -->
         <dependency>
